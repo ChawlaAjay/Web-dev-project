@@ -1,3 +1,4 @@
+import {CONNECTION} from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({limit:"30mb",extended:true}))
 app.use(cors())
 
 
-const CONNECTION_URL='mongodb+srv://reactproject:reactproject123@cluster0.sbts2gb.mongodb.net/?retryWrites=true&w=majority'
+const CONNECTION_URL=process.env.CONNECTION
 
 const PORT=process.env.PORT || 5000
 
